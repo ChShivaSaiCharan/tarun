@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/view.css'%}">
+</head>
+<body background="red">
+<div align="center">
+<h1>MOVIE LIST</h1>
+{% if lmovies%}
+<table border="1">
+    <thead>
+    <th>Release Date</th>
+    <th>Hero Name</th>
+    <th>Heroine Name</th>
+    <th>Rating</th>
+    </thead>
+    {% for i in lmovies%}
+    <tr>
+        <td>{{i.Movie_name}}</td>
+        <td>{{i.Hero_name}}</td>
+        <td>{{i.Heroine_name}}</td>
+        <td>{{i.rating}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else%}
+<p>NO MOVIES </p>
+{% endif %}
+</body>
+</div>
+</html>
+
+
+<!--Release_Date=forms.DateField()-->
+<!--    Movie_name=forms.CharField(max_length=30)-->
+<!--    Hero_name=forms.CharField(max_length=30)-->
+<!--    Heroine_name=forms.CharField(max_length=30)-->
+<!--    rating=forms.IntegerField()-->
